@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>톰 라이트 《바울 평전》 인터랙티브 인포그래픽</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Serif KR', 'sans-serif'],
+                        serif: ['Playfair Display', 'Noto Serif KR', 'serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#fbf7f4',
+                            100: '#f4eae3',
+                            200: '#e7d1c3',
+                            300: '#d5b39c',
+                            400: '#be8f72',
+                            500: '#aa7150',
+                            600: '#9b6043',
+                            700: '#814d35',
+                            800: '#69402d',
+                            900: '#563527',
+                        },
+                        theology: '#1e293b', // Deep slate
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom smooth scroll and scrollbar */
+        html {
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c2410c;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9a3412;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- Header -->
+    <header class="relative bg-gradient-to-br from-stone-900 via-stone-800 to-amber-950 text-stone-100 py-16 px-4 border-b border-amber-900/30 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-6xl mx-auto relative z-10 text-center">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/20 mb-4 tracking-wide uppercase">
+                N. T. Wright | Paul: A Biography
+            </span>
+            <h1 class="text-4xl md:text-6xl font-serif font-bold tracking-tight mb-4 text-stone-50">
+                톰 라이트의 <span class="text-amber-400">《바울 평전》</span>
+            </h1>
+            <p class="text-lg md:text-xl font-light text-stone-300 max-w-3xl mx-auto leading-relaxed font-serif italic">
+                "예수가 이스라엘의 메시아이자 온 세상의 참된 주(Kyrios)이시다"
+            </p>
+            <p class="text-sm md:text-md text-stone-400 mt-2 max-w-2xl mx-auto">
+                로마 제국을 뒤흔든 1세기의 유대인 혁명가, 선교사, 사상가 바울의 입체적 생애 분석
+            </p>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-12 space-y-16">
+
+        <!-- Core Concept Pillars (핵심 문제의식) -->
+        <section class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-stone-900 flex items-center justify-center gap-2">
+                    <i data-lucide="book-open" class="text-amber-700 w-7 h-7"></i> 책의 3대 핵심 문제의식
+                </h2>
+                <p class="text-stone-500 text-sm mt-1">톰 라이트가 복원한 바울 신학의 뼈대를 이루는 위대한 통찰</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <!-- Pillar 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-700 mb-4">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-stone-900 mb-2 font-serif">1. 유대인 바울의 정체성 유지</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            바울은 다메섹 도상에서 다른 종교로 개종한 것이 아닙니다. 이스라엘의 하나님 <span class="font-bold text-amber-800">YHWH</span>가 예수 안에서 이스라엘과 열방을 향한 옛 언약의 약속을 '성취'하셨다고 믿으며, 철저히 참된 유대인으로서 일생을 살았습니다.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-stone-100 text-xs text-amber-700 font-semibold flex items-center gap-1">
+                        <span>키워드: 연속성, 성취, 언약적 신실함</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-orange-700 mb-4">
+                            <i data-lucide="swords" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-stone-900 mb-2 font-serif">2. 제국 이데올로기와의 대치</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            황제(가이사)가 '주(Kyrios)'와 '구원자'로 선포되던 팍스 로마나 시대에, 바울은 '십자가에 못 박혔다 부활하신 예수'만이 온 우주의 참된 주권자라는 <strong>매우 정치적이면서도 영적인 전복적 복음</strong>을 거침없이 배포했습니다.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-stone-100 text-xs text-orange-700 font-semibold flex items-center gap-1">
+                        <span>키워드: 가이사 vs 예수, 전복적 선언</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-700 mb-4">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-stone-900 mb-2 font-serif">3. 단일한 다민족 공동체(새 창조)</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            유대인과 이방인을 구분 짓던 토라의 배타적 장벽(할례, 음식법 등)이 허물어지고, 오직 메시아를 신뢰하는 믿음 하나로 한 상에 둘러앉는 <strong>'새 창조'의 대조적 대안 사회</strong>를 지상에 구현해 내는 것이 그의 궁극적 목회 사명이었습니다.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-stone-100 text-xs text-emerald-700 font-semibold flex items-center gap-1">
+                        <span>키워드: 한 새 사람, 일치, 성만찬의 정치학</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Navigation Options -->
+        <section class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-stone-200 pb-4">
+                <div>
+                    <h2 class="text-2xl font-serif font-bold text-stone-900 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="text-amber-700 w-6 h-6"></i> 바울의 선교 여정 탐색기
+                    </h2>
+                    <p class="text-stone-500 text-sm">원하는 장(Chapter)이나 서신을 클릭하여 톰 라이트의 해설을 입체적으로 감상하세요.</p>
+                </div>
+                <!-- Filters -->
+                <div class="flex flex-wrap items-center gap-2" id="filter-container">
+                    <button onclick="filterTimeline('all')" id="btn-all" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-700 text-white transition-all">전체보기</button>
+                    <button onclick="filterTimeline('part1')" id="btn-part1" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-200 text-stone-700 hover:bg-stone-300 transition-all">1부. 시작 (1-4장)</button>
+                    <button onclick="filterTimeline('part2')" id="btn-part2" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-200 text-stone-700 hover:bg-stone-300 transition-all">2부. 왕의 사자 (5-13장)</button>
+                    <button onclick="filterTimeline('part3')" id="btn-part3" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-200 text-stone-700 hover:bg-stone-300 transition-all">3부. 바다 너머 (14-15장)</button>
+                </div>
+            </div>
+
+            <!-- Main Timeline Grid & Detailed View Panel -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left: List of Chapters (Timeline Style) -->
+                <div class="lg:col-span-5 space-y-3 max-h-[750px] overflow-y-auto pr-2" id="timeline-list">
+                    <!-- Dynamic generation via JavaScript -->
+                </div>
+
+                <!-- Right: Chapter Detail Viewer with high visual appeal -->
+                <div class="lg:col-span-7 bg-white rounded-2xl border border-stone-200/90 shadow-sm p-6 sticky top-6 min-h-[500px] flex flex-col justify-between" id="detail-panel">
+                    <div class="text-center py-20 text-stone-400" id="empty-state">
+                        <i data-lucide="mouse-pointer-click" class="w-12 h-12 mx-auto text-stone-300 mb-4 animate-bounce"></i>
+                        <p class="text-lg font-serif">왼쪽 타임라인에서 장을 선택하세요.</p>
+                        <p class="text-xs text-stone-400 mt-2">톰 라이트가 분석하는 바울의 고통과 희망의 스토리를 상세히 볼 수 있습니다.</p>
+                    </div>
+                    
+                    <!-- Dynamic detailed content gets injected here -->
+                    <div id="detail-content" class="hidden space-y-6">
+                        <!-- Header information -->
+                        <div class="flex flex-col gap-2 border-b border-stone-100 pb-4">
+                            <span id="detail-part" class="text-xs font-semibold text-amber-700 uppercase tracking-widest"></span>
+                            <h3 id="detail-title" class="text-2xl font-serif font-bold text-stone-900"></h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span id="detail-location" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs bg-stone-100 text-stone-700 font-medium">
+                                    <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> <span></span>
+                                </span>
+                                <span id="detail-letters" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs bg-amber-50 text-amber-800 font-medium hidden">
+                                    <i data-lucide="scroll" class="w-3.5 h-3.5"></i> <span></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Core content blocks -->
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1.5">장 요약</h4>
+                                <p id="detail-summary" class="text-stone-700 text-sm leading-relaxed"></p>
+                            </div>
+
+                            <div class="bg-stone-50 rounded-xl p-4 border border-stone-100">
+                                <h4 class="text-xs font-semibold text-amber-800 uppercase tracking-wider mb-2 flex items-center gap-1">
+                                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> 톰 라이트의 핵심 통찰 & 분석
+                                </h4>
+                                <p id="detail-insight" class="text-stone-600 text-sm leading-relaxed italic"></p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-emerald-50/50 p-3.5 rounded-xl border border-emerald-100/50">
+                                    <h5 class="text-xs font-semibold text-emerald-800 mb-1 flex items-center gap-1">
+                                        <i data-lucide="heart" class="w-3 h-3"></i> 영적/선교적 의미
+                                    </h5>
+                                    <p id="detail-spiritual" class="text-stone-600 text-xs leading-relaxed"></p>
+                                </div>
+                                <div class="bg-blue-50/50 p-3.5 rounded-xl border border-blue-100/50">
+                                    <h5 class="text-xs font-semibold text-blue-800 mb-1 flex items-center gap-1">
+                                        <i data-lucide="alert-circle" class="w-3 h-3"></i> 극복한 위기/도전
+                                    </h5>
+                                    <p id="detail-crisis" class="text-stone-600 text-xs leading-relaxed"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- bottom footer for details -->
+                        <div class="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-400">
+                            <span>바울의 사역 연대기 탐구</span>
+                            <span class="flex items-center gap-1 text-amber-700 font-medium">
+                                N.T. Wright: Paul
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Visual Stats / Journey Maps overview -->
+        <section class="bg-stone-900 text-stone-200 rounded-3xl p-8 shadow-inner relative overflow-hidden">
+            <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+            <div class="relative z-10 space-y-8">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <h2 class="text-xl md:text-2xl font-serif font-bold text-amber-400">바울의 사상과 흔적이 남긴 위대한 유산</h2>
+                    <p class="text-stone-400 text-xs">그가 남긴 13편의 서신서는 단순한 사적 편지를 넘어 로마제국과 예루살렘 성전 신학을 통섭한 신학적 대폭발이었습니다.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-4 bg-stone-800/60 rounded-2xl border border-stone-700/40">
+                        <div class="text-3xl font-serif font-bold text-amber-400">13편</div>
+                        <div class="text-stone-400 text-xs mt-1">신약성경 서신 집필</div>
+                    </div>
+                    <div class="p-4 bg-stone-800/60 rounded-2xl border border-stone-700/40">
+                        <div class="text-3xl font-serif font-bold text-amber-400">3차례+</div>
+                        <div class="text-stone-400 text-xs mt-1">위대한 선교 원정</div>
+                    </div>
+                    <div class="p-4 bg-stone-800/60 rounded-2xl border border-stone-700/40">
+                        <div class="text-3xl font-serif font-bold text-amber-400">10년+</div>
+                        <div class="text-stone-400 text-xs mt-1">다소에서의 고독과 침묵</div>
+                    </div>
+                    <div class="p-4 bg-stone-800/60 rounded-2xl border border-stone-700/40">
+                        <div class="text-3xl font-serif font-bold text-amber-400">하나</div>
+                        <div class="text-stone-400 text-xs mt-1">가족된 다민족 교회 개척</div>
+                    </div>
+                </div>
+
+                <div class="border-t border-stone-800 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-stone-400 gap-4">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>"그의 사슬은 복음의 진보를 가져왔다" (빌립보서 1:12)</span>
+                    </div>
+                    <p>정치학, 종교적 메시아 사상, 헬라 철학의 위대한 융합</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-8 px-4 border-t border-stone-800 text-center text-xs">
+        <div class="max-w-6xl mx-auto space-y-2">
+            <p>톰 라이트 저 《바울 평전》(Paul: A Biography, 복 있는 사람 간) 핵심 장별 요약 가이드북</p>
+            <p class="text-stone-600">이 시각화 정보는 성경 신학과 역사적 바울 연구를 돕기 위해 학술적 요약을 기반으로 특별 제작되었습니다.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Comprehensive Chapter Data structured based on Wright's book
+        const chaptersData = [
+            {
+                id: 1,
+                part: "part1",
+                partName: "1부: 시작 (Beginnings)",
+                chapterNum: "1장",
+                title: "열심 (Zeal)",
+                location: "다소 & 예루살렘",
+                letters: "",
+                summary: "사울(바울)의 초기 생애와 사상적 배경을 탐색합니다. 다소 출신의 시민권자이며 예루살렘의 위대한 랍비 가말리엘 문하에서 배운 바리새인 사울은 '율법에 대한 뜨거운 열심'을 지녔습니다.",
+                insight: "여기서 '열심(Zeal)'은 단순한 의욕이 아닙니다. 이스라엘의 고결함을 위해 이방 우상주의에 대항해 폭력을 행사하는 '성전적 투쟁(민수기 비느하스 전통)'을 뜻합니다. 바울이 초기 기독교인을 탄압한 것은 토라와 성전을 모독하는 교파가 하나님의 진노를 유발하여 메시아의 도래를 늦춘다고 굳게 믿었기 때문입니다.",
+                spiritual: "신념을 위해 폭력도 합리화하던 상태에서, 부활하신 메시아를 대면하기 직전 그의 종교적 열정의 최고점을 조명합니다.",
+                crisis: "참된 유대교적 거룩을 향한 열정이 도리어 메시아의 역사를 박해하는 눈먼 광기가 되었던 역설적인 한계."
+            },
+            {
+                id: 2,
+                part: "part1",
+                partName: "1부: 시작 (Beginnings)",
+                chapterNum: "2장",
+                title: "다메섹 (Damascus)",
+                location: "다메섹 도상",
+                letters: "",
+                summary: "다메섹으로 예수 운동가들을 잡으러 가던 중 부활하신 예수를 만난 결정적 빛의 사건을 밀도 있게 추적합니다.",
+                insight: "톰 라이트는 이 사건을 '개종(Conversion)'이 아닌 '세계관의 대재편(Worldview Transformation)'으로 선언합니다. 나무에 매달린 예수(율법에 저주받은 자)가 하나님에 의해 다시 살아났다는 부활의 사실은, 예수가 정죄를 극복한 진짜 유대 메시아라는 명백한 진리였습니다. 이 순간 사울의 일생을 관통하던 성경해석체계는 '십자가 메시아'로 완성됩니다.",
+                spiritual: "박해자에서 주(Kyrios)의 전령으로 일어나는 극적 은혜와 정체성 전환의 사건.",
+                crisis: "기존 동료들에게는 배신자로, 그리스도 신도들에게는 첩자로 밀고당할 수밖에 없는 완전한 사회적 고립의 즉각적 도래."
+            },
+            {
+                id: 3,
+                part: "part1",
+                partName: "1부: 시작 (Beginnings)",
+                chapterNum: "3장",
+                title: "아라비아와 다소 (Arabia and Tarsus)",
+                location: "아라비아 & 다소",
+                letters: "",
+                summary: "회심 직후 아라비아 광야로 향한 숨겨진 행보와 이후 고향 다소에서 약 10년간 소식 없이 보낸 깊은 영적 침묵기를 다룹니다.",
+                insight: "바울의 아라비아 행은 단순한 은둔이 아니었습니다. '신의 산 시내산'이 있는 곳으로 가서 엘리야처럼 복수와 열심의 사명을 내려놓고, 구약 전체를 메시아적 렌즈로 성찰하여 '사랑의 새 창조'로 영적 사상을 전면 재구성하는 고뇌의 여정이었습니다.",
+                spiritual: "열정적 행위자에서 하나님의 고요한 시간에 머무는 순종자로 훈련되는 깊은 영적 산고의 시간.",
+                crisis: "오랜 무명과 침묵 속에서 사역의 가능성을 잃어버릴 것만 같은 막막한 지평선."
+            },
+            {
+                id: 4,
+                part: "part1",
+                partName: "1부: 시작 (Beginnings)",
+                chapterNum: "4장",
+                title: "안디옥 (Antioch)",
+                location: "시리아 안디옥",
+                letters: "",
+                summary: "바나바의 손을 잡고 다소에서 시리아 안디옥 교회로 합류하여 목회의 전방에 뛰어든 격동의 연대를 조명합니다.",
+                insight: "안디옥은 유대인과 헬라인이 완전히 섞여 살던 상업과 다문화의 상징이었습니다. 라이트는 이곳에서 처음으로 일어난 '유대인과 이방인의 식사 공동체'가 바울이 꿈꾼 '하나의 다민족 대조가족 공동체'의 시작점이었다고 밝힙니다. 이들을 비로소 '그리스도의 사람들'로 호칭하기 시작합니다.",
+                spiritual: "이론적인 하나님의 통치가 실제 다문화적인 평등과 일치의 실체로 탄생하는 목회 현장.",
+                crisis: "뿌리 깊은 유대 전통의 인종적 폐쇄성과 이방인 세계의 세속적 자유 사이의 치열한 문화적 긴장."
+            },
+            {
+                id: 5,
+                part: "part2",
+                partName: "2부: 왕의 사자 (Herald of the King)",
+                chapterNum: "5장",
+                title: "키프로스와 갈라디아 (Cyprus and Galatia)",
+                location: "키프로스 & 남갈라디아",
+                letters: "갈라디아서",
+                summary: "제1차 선교 여행의 역동적인 성과와 직후 유대주의자들의 율법 위협에 대응하여 쓴 '갈라디아서'의 불꽃 튀는 수사학을 살핍니다.",
+                insight: "남갈라디아에서 이방인들이 율법 없이 메시아 신뢰(믿음)만으로 하나님의 참 백성으로 들어왔으나, 유대주의자들은 할례를 요구했습니다. 격분한 바울이 쓴 갈라디아서는 '인종이나 공로가 아닌, 오직 예수의 신실함만을 공유하는 단일 신자 공동체'를 사수하기 위한 투쟁적인 일치 선언문입니다.",
+                spiritual: "어떠한 외적 조건도 하나님 앞에 장애가 되지 않음을 알리는 복음적 자유의 수호.",
+                crisis: "예수를 메시아로 인정하는 이들끼리 서로 분파를 만들어 차별을 심화시키던 영적 무감각."
+            },
+            {
+                id: 6,
+                part: "part2",
+                partName: "2부: 왕의 사자 (Herald of the King)",
+                chapterNum: "6장",
+                title: "안디옥과 예루살렘 (Antioch and Jerusalem)",
+                location: "예루살렘 공의회",
+                letters: "",
+                summary: "안디옥에서 베드로와 겪은 격렬한 위선 논쟁(베드로의 외식 사건)과 교회의 미래를 결정지은 역사적인 예루살렘 공의회(행 15장)를 고찰합니다.",
+                insight: "바울은 베드로가 유대인 강경파들의 눈치를 보며 이방인 신자와 식사 테이블에서 일어선 것을 '복음의 본질에 대한 공격'으로 규정했습니다. 예루살렘 공의회에서 바울은 예루살렘의 사도들을 철저히 신학적으로 설득해 이방인의 문화적 다양성을 인정받고 '교회의 보편성'을 공고히 했습니다.",
+                spiritual: "신학적 진실을 지키기 위해 교회의 유력한 지도자 앞에서도 물러서지 않는 십자가 군사의 타협 없는 선포.",
+                crisis: "자칫하면 유대인 기독교와 이방인 기독교라는 두 교단으로 영원히 분열될 뻔했던 거대한 연합의 붕괴 위기."
+            },
+            {
+                id: 7,
+                part: "part2",
+                partName: "2부: 왕의 사자 (Herald of the King)",
+                chapterNum: "7장",
+                title: "유럽으로 (Into Europe)",
+                location: "빌립보 & 데살로니가",
+                letters: "",
+                summary: "성령의 이끄심을 따라 빌립보와 마케도니아 지역으로 영역을 확장한 제2차 선교 여행의 문을 엽니다.",
+                insight: "빌립보는 은퇴한 로마 군인들이 살던 아주 강렬한 친-로마 제국적 배후지였습니다. 이곳에서 바울 일행은 '가이사 이외의 또 다른 왕이 있다'고 선포하여 즉각 로마 치안당국에 의해 반역죄로 다뤄져 혹독한 감옥 고난을 받았습니다. 바울은 이 고난을 자신의 인격적 한계를 넘어 예수가 당했던 십자가 구속적 고난과 자신을 연합하는 은혜의 깊이로 치환시켰습니다.",
+                spiritual: "제국적 안락과 번영의 도시에서 십자가 약함의 능력으로 사슬을 뚫고 지나가는 사도의 행진.",
+                crisis: "물리적 채찍질과 투옥, 로마 시민권을 둘러싼 지배권력과의 신체적 충돌."
+            },
+            {
+                id: 8,
+                part: "part2",
+                partName: "2부: 왕의 사자 (Herald of the King)",
+                chapterNum: "8장",
+                title: "아테네 (Athens)",
+                location: "아레오바고 광장",
+                letters: "",
+                summary: "헬라 사상과 고대 지성의 정수였던 아테네 아레오바고 언덕에서 벌인 세련된 철학적 대론과 설교를 파헤칩니다.",
+                insight: "톰 라이트는 바울이 스토아 학파와 에피쿠로스 학파의 철학을 무작정 배척한 것이 아님을 논증합니다. 바울은 그들의 시와 우주관을 기막힌 메시아적 렌즈로 인용하여, 이 세상의 주인과 창조주는 한 분이시며 예수를 살리심으로 온 세상을 바르게 통치하고 심판할 공의로운 분이심을 논리정연하게 변증하는 지성적 도약의 깊이를 보여줍니다.",
+                spiritual: "세상 지혜의 심장부에서 참된 창조자이시며 심판주이신 부활의 주님을 지적이고도 당당하게 제시함.",
+                crisis: "부활에 대한 아테네 엘리트들의 지적 조소와 무관심, 냉대 속에서도 복음의 씨앗을 파종함."
+            },
+            {
+                id: 9,
+                part: "part2",
+                partName: "2부: 왕의 사자 (Herald of the King)",
+                chapterNum: "9장",
+                title: "고린도 I (Corinth I)",
+                location: "고린도",
+                letters: "데살로니가전후서",
+                summary: "그리스 최고의 환락적 경제 중심지 고린도에서 1년 반 동안 전개한 자비량 텐트 메이커 사역과 복음 전파를 분석합니다.",
+                insight: "성적 음란과 부와 가문 배경이 최고의 가치로 치부되던 고린도였습니다. 바울은 이곳에 머물며 돈을 요구하는 당대 소피스트(철학 교사)들과 철저히 구별되게 직접 천막 깁는 노동을 담당하며 생업을 도왔습니다. 이를 통해 가장 낮은 자들의 자리에서 신자들을 양육하고, 그들에게 '약하지만 강하며 가장 존귀한 십자가의 지혜'를 깊숙이 심었습니다.",
+                spiritual: "삶의 현장에서 직접 땀 흘리며 섬김으로써 계층주의 가득한 세속 자본 도시에 종복의 리더십을 제시함.",
+                crisis: "끊임없는 육체적 피로와 사역의 재정적 어려움, 영적 무력감과 외로움의 엄습."
+            },
+            {
+                id: 10,
+                part: "part2",
+                partName: "2부: 왕의 사자 (Herald of the King)",
+                chapterNum: "10장",
+                title: "에베소 I (Ephesus I)",
+                location: "에베소",
+                letters: "고린도전서",
+                summary: "아르테미스 여신 숭배와 주술적 암흑문화가 뒤섞인 소아시아 최대 거점 에베소에서의 3년간의 놀라운 영적 충돌을 살핍니다.",
+                insight: "두란노 서원에서 매일 철학적 강론과 교리를 가르친 에베소 사역은 에베소 사회 전체의 종교 사업적 기반을 흔들 만큼 문화적인 파란이었습니다. 바울은 이곳에서 사역하면서 분열과 음행, 은사 남용으로 시달리는 사랑하는 고린도 교회의 아픈 소식을 듣고 눈물과 분노의 가르침인 고린도전서를 힘껏 기록합니다.",
+                spiritual: "암흑과 미신의 지배 속에서 하나님의 참되신 통치(하나님 나라)를 인격적으로 선포하여 해방시키는 능력을 행함.",
+                crisis: "우상 조각가들과 주술 연합의 반역적 공격, 교회의 분열과 타락 소식으로 인한 영혼의 분할 고통."
+            },
+            {
+                id: 11,
+                part: "part2",
+                partName: "2부: 왕의 사자 (Herald of the King)",
+                chapterNum: "11장",
+                title: "에베소 II (Ephesus II)",
+                location: "에베소 감옥",
+                letters: "빌립보서, 빌레몬서, 골로새서, 에베소서",
+                summary: "사도행전에 상세히 드러나지 않은 에베소에서의 극단적 투옥과 죽음의 두려움, 우울증의 심연을 톰 라이트 특유의 영적 추리로 분석합니다.",
+                insight: "에베소 사역 말기에 바울은 사형 선고를 받은 것 같은 고도의 심리적 붕괴와 우울증을 겪었습니다. 놀랍게도 이 극한의 감옥 환경에서 쓰인 옥중서신들은 그리스도의 '우주적 절대 통치'와 '하늘과 땅의 일치'를 노래하고 있습니다. 그의 비참한 가택 사슬이 도리어 제국을 정복하는 그리스도의 찬가로 승화된 역사적 기적의 순간입니다.",
+                spiritual: "인간의 가장 연약하고 짓눌린 우울함 속에서 찬란하게 터져 나온 영광스러운 구원 신학의 꽃.",
+                crisis: "정신적 질식감과 살해 협박으로 고통받으며 '사형 선고'를 가슴에 품고 살아갔던 실존적 위기."
+            },
+            {
+                id: 12,
+                part: "part2",
+                partName: "2부: 왕의 사자 (Herald of the King)",
+                chapterNum: "12장",
+                title: "고린도 II (Corinth II)",
+                location: "마케도니아 & 고린도",
+                letters: "고린도후서, 로마서",
+                summary: "자신을 '거짓 사도'라고 모함하는 이들에 맞서 사도의 참된 징표인 '상처'와 '약함'을 변호하는 고린도후서를 집필하고, 마침내 로마서를 고린도에서 써 내려가는 거대한 지적 정점을 보여줍니다.",
+                insight: "바울은 자신을 비난하는 세상적 영광의 교사들에 맞서 '자신의 허약함, 수치, 상처'야말로 그리스도의 진짜 흔적이라 선언합니다. 이어 고린도에서 3개월간 체류하며 하나님의 약속이 어떻게 아브라함으로부터 시작해 모든 인류에게 신실하게 역사하셨는가를 직조해 내는 신학의 걸작 '로마서'를 완성합니다.",
+                spiritual: "세상의 힘의 논리를 거부하고 십자가의 쇠약함 속에 담긴 하나님의 무한한 공의와 사랑을 전폭적으로 증명함.",
+                crisis: "위조된 지도자들에 의한 평판의 위기, 목회적 배신감의 한가운데서 피워낸 지적 정점의 로마서."
+            },
+            {
+                id: 13,
+                part: "part2",
+                partName: "2부: 왕의 사자 (Herald of the King)",
+                chapterNum: "13장",
+                title: "다시 예루살렘 (Jerusalem Again)",
+                location: "예루살렘 성전",
+                letters: "",
+                summary: "이방인 신자들의 연보(구제금)를 안고, 생명의 결박 위협에도 불구하고 예루살렘으로 끝끝내 향한 바울의 마지막 결단을 다룹니다.",
+                insight: "라이트는 이방인 교회가 모은 헌금이 단순한 자선금이 아닌, 유대 기독교인과 이방 교회가 그리스도 안에서 '하나'라는 고통스러운 한 몸 됨의 증거물임을 명시합니다. 바울은 죽음의 선지적 경고들을 뒤로하고 이 아름다운 연대를 증명하기 위해 예루살렘으로 들어갔으나, 결국 성전 폭동 속에서 체포되고 맙니다.",
+                spiritual: "신학적 신념과 형제의 사랑을 물리적 목숨보다 소중히 여겼던 참 사도의 눈물겨운 발걸음.",
+                crisis: "성전 경내에서 유대 동족들의 살인적 분노 폭동과 로마 군대에 의한 예비 구금의 시작."
+            },
+            {
+                id: 14,
+                part: "part3",
+                partName: "3부: 바다, 바다 (The Sea, The Sea)",
+                chapterNum: "14장",
+                title: "가이사랴에서 로마로 (Caesarea to Rome)",
+                location: "가이사랴 -> 로마",
+                letters: "",
+                summary: "가이사랴 감옥에서의 2년의 기나긴 표류, 황제 소송을 위한 험난한 지중해 해상 난파기, 멜리데 섬 표류를 거쳐 로마 심장부에 마침내 당도한 여정입니다.",
+                insight: "누가가 묘사한 웅장한 지중해 난파 일지는 예수 그리스도의 수난 및 부활과 완전히 겹치는 문학적 영성 드라마입니다. 풍랑과 위기 속에서 오직 하나님만을 힘입어 승선한 276명 모두를 구원하는 바울의 행보는, 절망에 빠져 구원을 바라는 제국 시민을 부활로 살려내는 하늘 통치자의 모습과 같습니다.",
+                spiritual: "세상 제국 역사의 한가운데를 비집고 들어가 부활의 생명력을 만방에 이식하는 사도의 담대한 생존.",
+                crisis: "지중해의 무자비한 해풍 유라굴로의 난파, 사슬에 묶인 채 로마 황제 가이사에게 재판을 받아야 하는 생사의 한계."
+            },
+            {
+                id: 15,
+                part: "part3",
+                partName: "3부: 바다, 바다 (The Sea, The Sea)",
+                chapterNum: "15장",
+                title: "바울의 도전 (The Challenge of Paul)",
+                location: "로마 순교지 & 오늘날",
+                letters: "",
+                summary: "로마 참수장에서 생을 바친 바울이 21세기 현대 사회와 지성사에 여전히 던지고 있는 웅장하고 혁명적인 질문과 도전을 정리합니다.",
+                insight: "톰 라이트는 평전의 끝자락에서 바울을 역사상 가장 영향력 있는 지적 거장으로 복원해 냅니다. 그는 철저한 바리새파 전통을 간직한 유대인임에도 불구하고 당대의 민족주의와 국가제국주의의 한계를 통렬히 격파했습니다. 그리고 오직 한 분이신 예수의 사랑으로 엮인 '초국가적 단일 인류 공동체'의 모델을 탄생시킨 그의 외침에 오늘날 세속 사회가 응답해야 함을 강조합니다.",
+                spiritual: "단순한 기독교 창시를 넘어, 온 인류가 평등하게 화해하여 살아가도록 길을 낸 평화의 신학자로서의 위대함.",
+                crisis: "그가 피 흘려 세운 다민족적 일치와 십자가 겸손의 가치가 오늘날 종교 집단 내에서 다시 민족적 이데올로기로 타락하는 비극."
+            }
+        ];
+
+        let activeChapterId = null;
+
+        function renderTimeline(filter = 'all') {
+            const container = document.getElementById('timeline-list');
+            container.innerHTML = '';
+
+            const filteredData = chaptersData.filter(ch => {
+                if (filter === 'all') return true;
+                return ch.part === filter;
+            });
+
+            filteredData.forEach(ch => {
+                const isActive = ch.id === activeChapterId;
+                const activeClasses = isActive 
+                    ? 'border-amber-600 bg-amber-50/70 shadow-sm translate-x-1' 
+                    : 'border-stone-200 bg-white hover:border-amber-300 hover:bg-stone-50/50';
+
+                const partColor = ch.part === 'part1' ? 'bg-amber-100 text-amber-800' : ch.part === 'part2' ? 'bg-orange-100 text-orange-800' : 'bg-emerald-100 text-emerald-800';
+
+                const itemHtml = `
+                    <div onclick="selectChapter(${ch.id})" class="flex gap-4 p-4 rounded-xl border ${activeClasses} cursor-pointer transition-all duration-200">
+                        <div class="flex flex-col items-center justify-start">
+                            <span class="w-8 h-8 rounded-full bg-stone-100 text-stone-700 flex items-center justify-center font-bold text-xs">
+                                ${ch.id}
+                            </span>
+                            <div class="w-0.5 flex-grow bg-stone-200 my-1"></div>
+                        </div>
+                        <div class="flex-grow space-y-1">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-semibold ${partColor} px-2 py-0.5 rounded-full">${ch.chapterNum}</span>
+                                <span class="text-[11px] text-stone-400 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> ${ch.location}</span>
+                            </div>
+                            <h4 class="font-bold text-stone-800 text-sm font-serif">${ch.title}</h4>
+                            <p class="text-stone-500 text-xs line-clamp-1">${ch.summary}</p>
+                            ${ch.letters ? `
+                                <div class="flex items-center gap-1 text-[10px] font-medium text-amber-700 mt-1">
+                                    <i data-lucide="scroll" class="w-3 h-3"></i> <span>집필 서신: ${ch.letters}</span>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += itemHtml;
+            });
+
+            // Re-initialize Lucide Icons for dynamic content
+            lucide.createIcons();
+        }
+
+        function selectChapter(id) {
+            activeChapterId = id;
+            
+            // Re-render timeline to update active styles
+            const currentFilter = document.querySelector('#filter-container .bg-amber-700').id.replace('btn-', '');
+            renderTimeline(currentFilter);
+
+            const ch = chaptersData.find(c => c.id === id);
+            if (!ch) return;
+
+            document.getElementById('empty-state').classList.add('hidden');
+            const content = document.getElementById('detail-content');
+            content.classList.remove('hidden');
+
+            document.getElementById('detail-part').textContent = ch.partName;
+            document.getElementById('detail-title').textContent = `${ch.chapterNum}. ${ch.title}`;
+            
+            const locSpan = document.querySelector('#detail-location span');
+            locSpan.textContent = ch.location;
+
+            const lettersBadge = document.getElementById('detail-letters');
+            if (ch.letters) {
+                lettersBadge.classList.remove('hidden');
+                lettersBadge.querySelector('span').textContent = `집필 서신: ${ch.letters}`;
+            } else {
+                lettersBadge.classList.add('hidden');
+            }
+
+            document.getElementById('detail-summary').textContent = ch.summary;
+            document.getElementById('detail-insight').textContent = ch.insight;
+            document.getElementById('detail-spiritual').textContent = ch.spiritual;
+            document.getElementById('detail-crisis').textContent = ch.crisis;
+
+            // Scroll detail panel into view on small screens
+            if (window.innerWidth < 1024) {
+                document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function filterTimeline(part) {
+            // Update active state of buttons
+            const buttons = document.querySelectorAll('#filter-container button');
+            buttons.forEach(btn => {
+                btn.className = "px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-200 text-stone-700 hover:bg-stone-300 transition-all";
+            });
+
+            const activeBtn = document.getElementById(`btn-${part}`);
+            activeBtn.className = "px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-700 text-white transition-all";
+
+            renderTimeline(part);
+        }
+
+        // Initialize App
+        window.onload = function() {
+            renderTimeline('all');
+            // Auto select the first chapter
+            selectChapter(1);
+        };
+    </script>
+</body>
+</html>
